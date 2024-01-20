@@ -25,7 +25,9 @@ use_gpu = False
 device = torch.device('cuda' if torch.cuda.is_available() and use_gpu else 'cpu')
 map_loc = None if torch.cuda.is_available() and use_gpu else 'cpu'
 
+print("Data directory:", data_dir)
 ingrs_vocab = pickle.load(open(os.path.join(data_dir, 'ingr_vocab.pkl'), 'rb'))
+
 vocab = pickle.load(open(os.path.join(data_dir, 'instr_vocab.pkl'), 'rb'))
 ingr_vocab_size = len(ingrs_vocab)
 instrs_vocab_size = len(vocab)
